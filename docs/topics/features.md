@@ -301,7 +301,7 @@ The route table resource id is of the format: `/subscriptions/SUBSCRIPTIONID/res
 
 Existing subnets will need to use the Kubernetes-based Route Table so that machines can route to Kubernetes-based workloads.
 
-Update properties of all subnets in the existing VNET he route table resource by appending the following to subnet properties:
+Update properties of all subnets in the existing VNET route table resource by appending the following to subnet properties:
 
 ```json
 "routeTable": {
@@ -404,7 +404,7 @@ To auto-provision a jumpbox with your aks-engine deployment use:
 
 Enabling Azure Key Vault Encryption configures aks-engine to create an Azure Key Vault in the same resource group as the Kubernetes cluster and configures Kubernetes to use a key from this Key Vault to encrypt and decrypt etcd data for the Kubernetes cluster.
 
-To enable this feature, add `"enableEncryptionWithExternalKms": true` in `kubernetesConfig` and `objectId` in `servicePrincipalProfile`. Optional, if you want to create Hardware Security Modules (HSM) type keys, then add `"keyVaultSku": "Premium"` to enable creation of Premium SKU Key Vault and RSA-HSM type key. Otherwise, by default `keyVaultSku` can be omitted and a Standard SKU Key Vault and a RSA type key will be created.
+To enable this feature, add `"enableEncryptionWithExternalKms": true` in `kubernetesConfig` and `objectId` in `servicePrincipalProfile`. Optionally, if you want to create Hardware Security Modules (HSM) type keys, then add `"keyVaultSku": "Premium"` to enable creation of Premium SKU Key Vault and RSA-HSM type key. Otherwise, by default `keyVaultSku` can be omitted and a Standard SKU Key Vault and a RSA type key will be created.
 
 ```json
 "kubernetesConfig": {
